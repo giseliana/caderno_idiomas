@@ -10,11 +10,11 @@ $id_usuario = $_SESSION['usuario_id'];
 $filtro_escolhido = isset($_GET['filtro']) ? $_GET['filtro'] : 'todas';
 
 if ($filtro_escolhido == 'preciso_revisar') {
-    $sql = "SELECT * FROM palavras WHERE usuario_id = $id_usuario AND status = 'preciso_revisar' ORDER BY id DESC";
+    $sql = "SELECT * FROM palavras WHERE usuario_id = $id_usuario AND status = 'preciso_revisar' ORDER BY termo asc";
 } elseif ($filtro_escolhido == 'aprendido') {
-    $sql = "SELECT * FROM palavras WHERE usuario_id = $id_usuario AND status = 'aprendido' ORDER BY id DESC";
+    $sql = "SELECT * FROM palavras WHERE usuario_id = $id_usuario AND status = 'aprendido' ORDER BY termo asc";
 } else {
-    $sql = "SELECT * FROM palavras WHERE usuario_id = $id_usuario ORDER BY id DESC";
+    $sql = "SELECT * FROM palavras WHERE usuario_id = $id_usuario ORDER BY termo asc";
 }
 
 $resultado_palavras = $conexao->query($sql);
